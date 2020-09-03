@@ -1,4 +1,4 @@
-<!-- BACKGROUND AND CONTAINER -->
+﻿<!-- BACKGROUND AND CONTAINER -->
 <div class="background">
 
     <!-- HIDDEN STYLING ATTRS -->
@@ -13,7 +13,6 @@
     <button type="action" class="toggle page-1" name="act_page_1" data-i18n="page-1">Page 1</button>
     <button type="action" class="toggle page-2" name="act_page_2" data-i18n="page-2">Page 2</button>
     <button type="action" class="toggle page-3" name="act_page_3" data-i18n="page-3">Page 3</button>
-    <button type="action" class="toggle page-conditions 2nd" name="act_page_conditions" data-i18n="conditions">Conditions</button>
     
     <div class="spacer"></div>
     
@@ -103,31 +102,31 @@
             </div>
             <div>
                 <span data-i18n="age">Age:</span>
-                <input type="text" name="attr_homebrew_age" value="Age">
+                <input type="text" name="attr_homebrew_age" value="Calling">
             </div>
             <div>
                 <span data-i18n="faction">Faction:</span>
-                <input type="text" name="attr_homebrew_faction" value="Faction">
+                <input type="text" name="attr_homebrew_faction" value="Queen">
             </div>
             <div>
                 <span data-i18n="group-name">Group Name:</span>
-                <input type="text" name="attr_homebrew_group_name" value="Group Name">
+                <input type="text" name="attr_homebrew_group_name" value="Embassy">
             </div>
             <div>
                 <span data-i18n="abilities">Abilities</span>:
-                <input type="text" name="attr_homebrew_abilities" value="Abilities">
+                <input type="text" name="attr_homebrew_abilities" value="Invocations">
             </div>
             <div>
                 <span data-i18n="morality">Morality</span>:
-                <input type="text" name="attr_homebrew_morality" value="Morality">
+                <input type="text" name="attr_homebrew_morality" value="Inner Light">
             </div>
             <div>
                 <span data-i18n="rank">Rank</span>:
-                <input type="text" name="attr_homebrew_rank" value="Rank">
+                <input type="text" name="attr_homebrew_rank" value="Shadows">
             </div>
             <div>
                 <span data-i18n="resource">Resource</span>:
-                <input type="text" name="attr_homebrew_resource" value="Resource">
+                <input type="text" name="attr_homebrew_resource" value="Wisps">
             </div>
         </div>
 
@@ -213,13 +212,13 @@
         <div class="diceroller-grid">
             <div class="subheader" data-i18n="dice-roller-u">DICE ROLLER</div>
             <div class="span">
-                <button type="roll" class="inline-flex" name="roll_initiative" data-i18n="initiative" value="&{template:wod-initiative} {{name=@{character_name}}} {{dexterity=@{dexterity}}} {{composure=@{composure}}} {{fastReflexes=@{fast_reflexes}}} {{initiativePenalty=@{initiative_penalty}}} {{result=[[1d10 + @{dexterity} + @{composure} + @{fast_reflexes} + @{initiative_penalty} &{tracker}]]}}">
+                <button type="roll" class="inline-flex" name="roll_initiative" data-i18n="initiative" value="&{template:wod-initiative} {{name=@{character_name}}} {{dexterity=@{transformed_dexterity}}} {{composure=@{transformed_composure}}} {{fastReflexes=@{fast_reflexes}}} {{initiativePenalty=@{initiative_penalty}}} {{result=[[1d10 + @{transformed_dexterity} + @{transformed_composure} + @{fast_reflexes} + @{initiative_penalty} &{tracker}]]}}">
                     Initiative
                 </button>
             </div>
             <div class="rollcontainer">
                 <button type="roll" class="rollstyle sheet" name="roll_sheet" value="&{template:wod} {{name=@{character_name}}} {{dicePool=@{dice_pool}}} {{dicePoolHtml=@{dice_pool_html}}} {{mod=[[?{@{modifiermacro}|0}]]}} {{woundpenalty=[[@{wound_penalty}]]}} {{result=[[{((?{@{modifiermacro}|0}+@{wound_penalty}+@{dice_pool})@{rolltype}"></button>
-                <button type="roll" class="rollstyle attack" name="roll_attack" value="&{template:wod-attack} {{name=@{character_name}}} {{strength=@{strength}}} {{dexterity=@{dexterity}}} {{brawl=@{brawl}}} {{weaponry=@{weaponry}}} {{firearms=@{firearms}}} {{athletics=@{athletics}}} {{mod=[[?{@{modifiermacro}|0}]]}} {{woundpenalty=[[@{wound_penalty}]]}} {{wpen=[[@{weapon_penalty}]]}} {{apen=[[@{armor_penalty}]]}} @{attack}@{rolltype}"></button>
+                <button type="roll" class="rollstyle attack" name="roll_attack" value="&{template:wod-attack} {{name=@{character_name}}} {{strength=@{transformed_strength}}} {{dexterity=@{transformed_dexterity}}} {{brawl=@{transformed_brawl}}} {{weaponry=@{transformed_weaponry}}} {{firearms=@{transformed_firearms}}} {{athletics=@{transformed_athletics}}} {{mod=[[?{@{modifiermacro}|0}]]}} {{woundpenalty=[[@{wound_penalty}]]}} {{wpen=[[@{weapon_penalty}]]}} {{apen=[[@{armor_penalty}]]}} @{attack}@{rolltype}"></button>
                 <button type="roll" class="rollstyle simple" name="roll_simple" value="&{template:wod-simple} {{name=@{character_name}}} {{option=?{@{dicepoolmacro}|0}}} {{result=[[{(?{@{dicepoolmacro}|1}@{rolltype}"></button>
             </div>
             <div class="diceroller-options">
@@ -245,8 +244,8 @@
     </div>
     
     <!-- HEADER -->
-    <div class="page page1 page2 page3 conditions logo">
-        <img class="game-line mortal homebrew" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/chroniclesofdarkness.png">
+    <div class="page page1 page2 page3 logo">
+        <img class="game-line mortal" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/chroniclesofdarkness.png">
         <img class="game-line vampire" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/vampire.png">
         <img class="game-line werewolf" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/werewolf.png">
         <img class="game-line mage" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/mage.png">
@@ -255,11 +254,25 @@
         <img class="game-line geist" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/geist20200815.png">
         <img class="game-line hunter" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/hunter.png">
         <img class="game-line demon" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/DtD_logo.png">
+        <img class="game-line homebrew" src="https://vignette.wikia.nocookie.net/princesswod/images/8/89/Wiki-wordmark.png/revision/latest?cb=20180123154700">
         <!-- <img class="game-line deviant" src=""> -->
     </div>
     
     <!-- PAGE 1 -->
     <div class="page page1">
+        <div class="game-line homebrew">
+            <div class="info-grid">
+                <div class="section-header" text-align>TRANSFORMED</div>
+                <div class="checkbox">
+                    <input type="hidden" name="attr_transformed_flag1">
+                    <button type="action" name="act_transformed_flag1"></button>
+                </div>
+                <div>
+                    <input type="hidden" class="flag" name="attr_transformed_flag1" value="0">
+                </div>    
+            </div>
+            <div class="spacer"></div>
+        </div>
         <!-- CHARACTER INFO FIELDS -->
         <div class="info-grid">
             <!-- Row 1 -->
@@ -389,6 +402,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_intelligence_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_intelligence_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_intelligence_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tintelligence" value="0" />
+                        <button type="action" class="dot zero" name="act_Tintelligence_0">×</button>
+                        <button type="action" class="dot" name="act_Tintelligence_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tintelligence_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tintelligence_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tintelligence_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tintelligence_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="finesse mental label">
                     <input type="hidden" class="flag" name="attr_wits_flag" value="0" />
@@ -402,6 +426,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_wits_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_wits_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_wits_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Twits" value="0" />
+                        <button type="action" class="dot zero" name="act_Twits_0">×</button>
+                        <button type="action" class="dot" name="act_Twits_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Twits_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Twits_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Twits_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Twits_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="resistance mental label">
                     <input type="hidden" class="flag" name="attr_resolve_flag" value="0" />
@@ -415,6 +450,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_resolve_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_resolve_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_resolve_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tresolve" value="0" />
+                        <button type="action" class="dot zero" name="act_Tresolve_0">×</button>
+                        <button type="action" class="dot" name="act_Tresolve_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tresolve_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tresolve_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tresolve_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tresolve_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="physical border"></div>
                 <div class="power physical label">
@@ -429,6 +475,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_strength_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_strength_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_strength_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tstrength" value="0" />
+                        <button type="action" class="dot zero" name="act_Tstrength_0">×</button>
+                        <button type="action" class="dot" name="act_Tstrength_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tstrength_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tstrength_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tstrength_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tstrength_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="finesse physical label">
                     <input type="hidden" class="flag" name="attr_dexterity_flag" value="0" />
@@ -442,6 +499,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_dexterity_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_dexterity_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_dexterity_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tdexterity" value="0" />
+                        <button type="action" class="dot zero" name="act_Tdexterity_0">×</button>
+                        <button type="action" class="dot" name="act_Tdexterity_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tdexterity_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tdexterity_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tdexterity_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tdexterity_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="resistance physical label">
                     <input type="hidden" class="flag" name="attr_stamina_flag" value="0" />
@@ -455,6 +523,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_stamina_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_stamina_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_stamina_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tstamina" value="0" />
+                        <button type="action" class="dot zero" name="act_Tstamina_0">×</button>
+                        <button type="action" class="dot" name="act_Tstamina_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tstamina_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tstamina_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tstamina_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tstamina_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="social border"></div>
                 <div class="power social label">
@@ -469,6 +548,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_presence_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_presence_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_presence_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tpresence" value="0" />
+                        <button type="action" class="dot zero" name="act_Tpresence_0">×</button>
+                        <button type="action" class="dot" name="act_Tpresence_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tpresence_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tpresence_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tpresence_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tpresence_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="finesse social label">
                     <input type="hidden" class="flag" name="attr_manipulation_flag" value="0" />
@@ -482,6 +572,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_manipulation_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_manipulation_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_manipulation_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tmanipulation" value="0" />
+                        <button type="action" class="dot zero" name="act_Tmanipulation_0">×</button>
+                        <button type="action" class="dot" name="act_Tmanipulation_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tmanipulation_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tmanipulation_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tmanipulation_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tmanipulation_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="resistance social label">
                     <input type="hidden" class="flag" name="attr_composure_flag" value="0" />
@@ -495,6 +596,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_composure_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_composure_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_composure_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tcomposure" value="0" />
+                        <button type="action" class="dot zero" name="act_Tcomposure_0">×</button>
+                        <button type="action" class="dot" name="act_Tcomposure_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tcomposure_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tcomposure_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tcomposure_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tcomposure_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -590,6 +702,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_academics_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_academics_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_academics_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tacademics" value="0" />
+                        <button type="action" class="dot zero" name="act_Tacademics_0">×</button>
+                        <button type="action" class="dot" name="act_Tacademics_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tacademics_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tacademics_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tacademics_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tacademics_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="not-enigmas-era">
                     <input type="hidden" class="flag" name="attr_computer_flag" value="0" />
@@ -603,6 +726,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_computer_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_computer_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_computer_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tcomputer" value="0" />
+                        <button type="action" class="dot zero" name="act_Tcomputer_0">×</button>
+                        <button type="action" class="dot" name="act_Tcomputer_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tcomputer_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tcomputer_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tcomputer_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tcomputer_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_crafts_flag" value="0" />
@@ -616,6 +750,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_crafts_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_crafts_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_crafts_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tcrafts" value="0" />
+                        <button type="action" class="dot zero" name="act_Tcrafts_0">×</button>
+                        <button type="action" class="dot" name="act_Tcrafts_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tcrafts_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tcrafts_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tcrafts_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tcrafts_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="is-enigmas-era">
                     <input type="hidden" class="flag" name="attr_enigmas_flag" value="0" />
@@ -629,6 +774,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_enigmas_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_enigmas_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_enigmas_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tenigmas" value="0" />
+                        <button type="action" class="dot zero" name="act_Tenigmas_0">×</button>
+                        <button type="action" class="dot" name="act_Tenigmas_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tenigmas_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tenigmas_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tenigmas_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tenigmas_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_investigation_flag" value="0" />
@@ -642,6 +798,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_investigation_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_investigation_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_investigation_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tinvestigation" value="0" />
+                        <button type="action" class="dot zero" name="act_Tinvestigation_0">×</button>
+                        <button type="action" class="dot" name="act_Tinvestigation_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tinvestigation_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tinvestigation_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tinvestigation_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tinvestigation_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_medicine_flag" value="0" />
@@ -655,6 +822,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_medicine_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_medicine_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_medicine_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tmedicine" value="0" />
+                        <button type="action" class="dot zero" name="act_Tmedicine_0">×</button>
+                        <button type="action" class="dot" name="act_Tmedicine_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tmedicine_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tmedicine_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tmedicine_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tmedicine_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_occult_flag" value="0" />
@@ -668,6 +846,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_occult_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_occult_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_occult_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Toccult" value="0" />
+                        <button type="action" class="dot zero" name="act_Toccult_0">×</button>
+                        <button type="action" class="dot" name="act_Toccult_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Toccult_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Toccult_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Toccult_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Toccult_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_politics_flag" value="0" />
@@ -681,6 +870,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_politics_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_politics_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_politics_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tpolitics" value="0" />
+                        <button type="action" class="dot zero" name="act_Tpolitics_0">×</button>
+                        <button type="action" class="dot" name="act_Tpolitics_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tpolitics_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tpolitics_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tpolitics_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tpolitics_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_science_flag" value="0" />
@@ -694,6 +894,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_science_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_science_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_science_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tscience" value="0" />
+                        <button type="action" class="dot zero" name="act_Tscience_0">×</button>
+                        <button type="action" class="dot" name="act_Tscience_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tscience_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tscience_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tscience_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tscience_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="subheader" data-i18n="physical">Physical</div>
                 <div class="subsubheader" data-i18n="unskilled-min1">(-1 unskilled)</div>
@@ -709,6 +920,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_archery_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_archery_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_archery_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tarchery" value="0" />
+                        <button type="action" class="dot zero" name="act_Tarchery_0">×</button>
+                        <button type="action" class="dot" name="act_Tarchery_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tarchery_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tarchery_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tarchery_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tarchery_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_athletics_flag" value="0" />
@@ -722,6 +944,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_athletics_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_athletics_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_athletics_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tathletics" value="0" />
+                        <button type="action" class="dot zero" name="act_Tathletics_0">×</button>
+                        <button type="action" class="dot" name="act_Tathletics_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tathletics_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tathletics_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tathletics_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tathletics_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_brawl_flag" value="0" />
@@ -735,6 +968,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_brawl_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_brawl_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_brawl_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tbrawl" value="0" />
+                        <button type="action" class="dot zero" name="act_Tbrawl_0">×</button>
+                        <button type="action" class="dot" name="act_Tbrawl_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tbrawl_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tbrawl_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tbrawl_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tbrawl_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="not-ride-era">
                     <input type="hidden" class="flag" name="attr_drive_flag" value="0" />
@@ -748,6 +992,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_drive_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_drive_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_drive_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tdrive" value="0" />
+                        <button type="action" class="dot zero" name="act_Tdrive_0">×</button>
+                        <button type="action" class="dot" name="act_Tdrive_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tdrive_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tdrive_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tdrive_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tdrive_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="not-archery-era">
                     <input type="hidden" class="flag" name="attr_firearms_flag" value="0" />
@@ -761,6 +1016,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_firearms_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_firearms_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_firearms_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tfirearms" value="0" />
+                        <button type="action" class="dot zero" name="act_Tfirearms_0">×</button>
+                        <button type="action" class="dot" name="act_Tfirearms_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tfirearms_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tfirearms_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tfirearms_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tfirearms_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_larceny_flag" value="0" />
@@ -774,6 +1040,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_larceny_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_larceny_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_larceny_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tlarceny" value="0" />
+                        <button type="action" class="dot zero" name="act_Tlarceny_0">×</button>
+                        <button type="action" class="dot" name="act_Tlarceny_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tlarceny_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tlarceny_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tlarceny_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tlarceny_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="is-ride-era">
                     <input type="hidden" class="flag" name="attr_ride_flag" value="0" />
@@ -787,6 +1064,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_ride_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_ride_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_ride_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tride" value="0" />
+                        <button type="action" class="dot zero" name="act_Tride_0">×</button>
+                        <button type="action" class="dot" name="act_Tride_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tride_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tride_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tride_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tride_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_stealth_flag" value="0" />
@@ -800,6 +1088,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_stealth_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_stealth_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_stealth_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tstealth" value="0" />
+                        <button type="action" class="dot zero" name="act_Tstealth_0">×</button>
+                        <button type="action" class="dot" name="act_Tstealth_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tstealth_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tstealth_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tstealth_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tstealth_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_survival_flag" value="0" />
@@ -813,6 +1112,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_survival_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_survival_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_survival_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tsurvival" value="0" />
+                        <button type="action" class="dot zero" name="act_Tsurvival_0">×</button>
+                        <button type="action" class="dot" name="act_Tsurvival_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tsurvival_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tsurvival_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tsurvival_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tsurvival_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_weaponry_flag" value="0" />
@@ -826,6 +1136,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_weaponry_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_weaponry_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_weaponry_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tweaponry" value="0" />
+                        <button type="action" class="dot zero" name="act_Tweaponry_0">×</button>
+                        <button type="action" class="dot" name="act_Tweaponry_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tweaponry_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tweaponry_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tweaponry_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tweaponry_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div class="subheader" data-i18n="social">Social</div>
                 <div class="subsubheader" data-i18n="unskilled-min1">(-1 unskilled)</div>
@@ -841,6 +1162,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_animalken_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_animalken_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_animalken_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tanimalken" value="0" />
+                        <button type="action" class="dot zero" name="act_Tanimalken_0">×</button>
+                        <button type="action" class="dot" name="act_Tanimalken_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tanimalken_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tanimalken_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tanimalken_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tanimalken_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_empathy_flag" value="0" />
@@ -854,6 +1186,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_empathy_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_empathy_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_empathy_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tempathy" value="0" />
+                        <button type="action" class="dot zero" name="act_Tempathy_0">×</button>
+                        <button type="action" class="dot" name="act_Tempathy_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tempathy_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tempathy_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tempathy_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tempathy_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_expression_flag" value="0" />
@@ -867,6 +1210,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_expression_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_expression_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_expression_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Texpression" value="0" />
+                        <button type="action" class="dot zero" name="act_Texpression_0">×</button>
+                        <button type="action" class="dot" name="act_Texpression_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Texpression_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Texpression_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Texpression_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Texpression_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_intimidation_flag" value="0" />
@@ -880,6 +1234,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_intimidation_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_intimidation_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_intimidation_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tintimidation" value="0" />
+                        <button type="action" class="dot zero" name="act_Tintimidation_0">×</button>
+                        <button type="action" class="dot" name="act_Tintimidation_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tintimidation_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tintimidation_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tintimidation_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tintimidation_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_persuasion_flag" value="0" />
@@ -893,6 +1258,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_persuasion_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_persuasion_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_persuasion_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tpersuasion" value="0" />
+                        <button type="action" class="dot zero" name="act_Tpersuasion_0">×</button>
+                        <button type="action" class="dot" name="act_Tpersuasion_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tpersuasion_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tpersuasion_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tpersuasion_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tpersuasion_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_socialize_flag" value="0" />
@@ -906,6 +1282,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_socialize_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_socialize_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_socialize_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tsocialize" value="0" />
+                        <button type="action" class="dot zero" name="act_Tsocialize_0">×</button>
+                        <button type="action" class="dot" name="act_Tsocialize_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tsocialize_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tsocialize_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tsocialize_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tsocialize_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_streetwise_flag" value="0" />
@@ -919,6 +1306,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_streetwise_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_streetwise_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_streetwise_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tstreetwise" value="0" />
+                        <button type="action" class="dot zero" name="act_Tstreetwise_0">×</button>
+                        <button type="action" class="dot" name="act_Tstreetwise_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tstreetwise_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tstreetwise_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tstreetwise_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tstreetwise_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
                 <div>
                     <input type="hidden" class="flag" name="attr_subterfuge_flag" value="0" />
@@ -932,6 +1330,17 @@
                     <button type="action" class="dot ne-1 ne-2" name="act_subterfuge_3"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3" name="act_subterfuge_4"></button>
                     <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_subterfuge_5"></button>
+                    <div class="dots2">
+                        <div class="subheader" >(</div>
+                        <input type="hidden" name="attr_Tsubterfuge" value="0" />
+                        <button type="action" class="dot zero" name="act_Tsubterfuge_0">×</button>
+                        <button type="action" class="dot" name="act_Tsubterfuge_1"></button>
+                        <button type="action" class="dot ne-1" name="act_Tsubterfuge_2"></button>
+                        <button type="action" class="dot ne-1 ne-2" name="act_Tsubterfuge_3"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tsubterfuge_4"></button>
+                        <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tsubterfuge_5"></button>
+                        <div class="subheader" >)</div>
+                    </div>
                 </div>
             </div>
     
@@ -1143,7 +1552,7 @@
                             </div>
                             <div class="horizontal-spacer"></div>
                             <!-- OTHER TRAITS -->
-                            <div class="game-line mortal werewolf promethean changeling geist mummy hunter demon beast homebrew">
+                            <div class="game-line mortal werewolf promethean changeling geist mummy hunter demon beast">
                                 <div class="subheader">
                                     <span class="game-line mortal1 mortal2" data-i18n="other" >Other</span>
                                     <span class="organization" data-i18n="ceremonies" >Ceremonies</span>
@@ -1775,6 +2184,190 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- PRINCESS -->
+                            <div class="game-line homebrew">
+                                <div class="subheader">
+                                    <span data-i18n="invocations" >Invocations</span>
+                                </div>
+                                <div class="input-list">
+                                    <div class="input-group">
+                                        <input type="hidden" class="flag" name="attr_Acqua_flag" value="0" />
+                                        <button type="action" class="toggle" name="act_acqua">Acqua</button>
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_Acqua" value="0">
+                                            <button type="action" class="dot zero" name="act_Acqua_0">&times;</button>
+                                            <button type="action" class="dot" name="act_Acqua_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_Acqua_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_Acqua_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Acqua_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Acqua_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="hidden" class="flag" name="attr_Aria_flag" value="0" />
+                                        <button type="action" class="toggle" name="act_aria">Aria</button>
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_Aria" value="0">
+                                            <button type="action" class="dot zero" name="act_Aria_0">&times;</button>
+                                            <button type="action" class="dot" name="act_Aria_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_Aria_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_Aria_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Aria_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Aria_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="hidden" class="flag" name="attr_Fuoco_flag" value="0" />
+                                        <button type="action" class="toggle" name="act_fuoco">Fuoco</button>
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_Fuoco" value="0">
+                                            <button type="action" class="dot zero" name="act_Fuoco_0">&times;</button>
+                                            <button type="action" class="dot" name="act_Fuoco_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_Fuoco_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_Fuoco_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Fuoco_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Fuoco_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="hidden" class="flag" name="attr_Legno_flag" value="0" />
+                                        <button type="action" class="toggle" name="act_legno">Legno</button>
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_Legno" value="0">
+                                            <button type="action" class="dot zero" name="act_Legno_0">&times;</button>
+                                            <button type="action" class="dot" name="act_Legno_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_Legno_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_Legno_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Legno_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Legno_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="hidden" class="flag" name="attr_Terra_flag" value="0" />
+                                        <button type="action" class="toggle" name="act_terra">Terra</button>
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_Terra" value="0">
+                                            <button type="action" class="dot zero" name="act_Terra_0">&times;</button>
+                                            <button type="action" class="dot" name="act_Terra_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_Terra_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_Terra_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Terra_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Terra_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="hidden" class="flag" name="attr_Lacrima_flag" value="0" />
+                                        <button type="action" class="toggle" name="act_lacrima">Lacrima</button>
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_Lacrima" value="0">
+                                            <button type="action" class="dot zero" name="act_Lacrima_0">&times;</button>
+                                            <button type="action" class="dot" name="act_Lacrima_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_Lacrima_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_Lacrima_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Lacrima_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Lacrima_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="hidden" class="flag" name="attr_Specchio_flag" value="0" />
+                                        <button type="action" class="toggle" name="act_specchio">Specchio</button>
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_Specchio" value="0">
+                                            <button type="action" class="dot zero" name="act_Specchio_0">&times;</button>
+                                            <button type="action" class="dot" name="act_Specchio_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_Specchio_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_Specchio_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Specchio_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Specchio_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="hidden" class="flag" name="attr_Tempesta_flag" value="0" />
+                                        <button type="action" class="toggle" name="act_tempesta">Tempesta</button>
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_Tempesta" value="0">
+                                            <button type="action" class="dot zero" name="act_Tempesta_0">&times;</button>
+                                            <button type="action" class="dot" name="act_Tempesta_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_Tempesta_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_Tempesta_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_Tempesta_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_Tempesta_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" name="attr_arcana1_name" />
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_arcana1" value="0">
+                                            <button type="action" class="dot zero" name="act_arcana1_0">&times;</button>
+                                            <button type="action" class="dot" name="act_arcana1_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_arcana1_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_arcana1_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_arcana1_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_arcana1_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" name="attr_arcana2_name" />
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_arcana2" value="0">
+                                            <button type="action" class="dot zero" name="act_arcana2_0">&times;</button>
+                                            <button type="action" class="dot" name="act_arcana2_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_arcana2_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_arcana2_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_arcana2_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_arcana2_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" name="attr_arcana3_name" />
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_arcana3" value="0">
+                                            <button type="action" class="dot zero" name="act_arcana3_0">&times;</button>
+                                            <button type="action" class="dot" name="act_arcana3_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_arcana3_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_arcana3_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_arcana3_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_arcana3_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" name="attr_arcana4_name" />
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_arcana4" value="0">
+                                            <button type="action" class="dot zero" name="act_arcana4_0">&times;</button>
+                                            <button type="action" class="dot" name="act_arcana4_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_arcana4_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_arcana4_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_arcana4_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_arcana4_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" name="attr_arcana5_name" />
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_arcana5" value="0">
+                                            <button type="action" class="dot zero" name="act_arcana5_0">&times;</button>
+                                            <button type="action" class="dot" name="act_arcana5_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_arcana5_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_arcana5_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_arcana5_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_arcana5_5"></button>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" name="attr_arcana6_name" />
+                                        <div class="dots">
+                                            <input type="hidden" name="attr_arcana6" value="0">
+                                            <button type="action" class="dot zero" name="act_arcana6_0">&times;</button>
+                                            <button type="action" class="dot" name="act_arcana6_1"></button>
+                                            <button type="action" class="dot ne-1" name="act_arcana6_2"></button>
+                                            <button type="action" class="dot ne-1 ne-2" name="act_arcana6_3"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3" name="act_arcana6_4"></button>
+                                            <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_arcana6_5"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="corporeal el_spacer"></div>
                         <input type="hidden" name="attr_attack" value="{{attack_name=@{attack_name0}}} {{weapon_damage=@{attack_damage0}}} {{range=@{attack_range0}}} @{attack_type0}">
@@ -1800,17 +2393,17 @@
                             </div>
                             <div class="selectcontainer">
                                 <select name="attr_attack_type0">
-                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{strength}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" checked="checked" data-i18n="brawl" >Brawl</option>
-                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage0}+@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage0}+@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage0}+@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage0}+@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage0}+@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{transformed_strength}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" checked="checked" data-i18n="brawl" >Brawl</option>
+                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage0}+@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage0}+@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage0}+@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage0}+@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage0}+@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
                                 </select>
                             </div>
                             <div><input type="text" name="attr_attack_damage0" value="0" /></div>
@@ -1832,17 +2425,17 @@
                             <div class="selectcontainer">
                                 <select name="attr_attack_type1">
                                     <option value="{{result=[[{((?{@{modifiermacro}|0})" checked="checked"></option>
-                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{strength}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl" >Brawl</option>
-                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage1}+@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{transformed_strength}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl" >Brawl</option>
+                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage1}+@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
                                 </select>
                             </div>
                             <div><input type="text" name="attr_attack_damage1" /></div>
@@ -1864,17 +2457,17 @@
                             <div class="selectcontainer">
                                 <select name="attr_attack_type2">
                                     <option value="{{result=[[{((?{@{modifiermacro}|0})" checked="checked"></option>
-                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{strength}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl" >Brawl</option>
-                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage2}+@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage2}+@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage2}+@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage2}+@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage2}+@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{transformed_strength}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl" >Brawl</option>
+                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage2}+@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage2}+@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage2}+@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage2}+@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage2}+@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
                                 </select>
                             </div>
                             <div><input type="text" name="attr_attack_damage2" class="weaponstat" /></div>
@@ -1896,17 +2489,17 @@
                             <div class="selectcontainer">
                                 <select name="attr_attack_type3">
                                     <option value="{{result=[[{((?{@{modifiermacro}|0})" checked="checked"></option>
-                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{strength}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl" >Brawl</option>
-                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage3}+@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage3}+@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage3}+@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage3}+@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage3}+@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{transformed_strength}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl" >Brawl</option>
+                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage3}+@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage3}+@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage3}+@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage3}+@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage3}+@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
                                 </select>
                             </div>
                             <div><input type="text" name="attr_attack_damage3" class="weaponstat" /></div>
@@ -1928,17 +2521,17 @@
                             <div class="selectcontainer">
                                 <select name="attr_attack_type4">
                                     <option value="{{result=[[{((?{@{modifiermacro}|0})" checked="checked"></option>
-                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{strength}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl" >Brawl</option>
-                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage4}+@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage4}+@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage4}+@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage4}+@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage4}+@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
-                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option value="{{str=1}} {{bra=1}} {{result=[[{((@{transformed_strength}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl" >Brawl</option>
+                                    <option class="1st" value="{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage4}+@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage4}+@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage4}+@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage4}+@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="1st" value="{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage4}+@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee" >Melee</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="gun" >Gun</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="thrown" >Thrown</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="brawl-fight-finesse" >Brawl* (Fighting Finesse)</option>
+                                    <option class="2nd" value="{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})" data-i18n="melee-fight-finesse" >Melee* (Fighting Finesse)</option>
                                 </select>
                             </div>
                             <div><input type="text" name="attr_attack_damage4" class="weaponstat" /></div>
@@ -2179,9 +2772,52 @@
                                     <button type="action" name="act_willpower_box10"></button>
                                 </div>
                             </div>
+                            <div class="checkboxes">
+                                <input type="hidden" name="attr_willpower" class="if" />
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10">
+                                    <input type="hidden" name="attr_willpower_box11" />
+                                    <button type="action" name="act_willpower_box11"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11">
+                                    <input type="hidden" name="attr_willpower_box12" />
+                                    <button type="action" name="act_willpower_box12"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11 ne-12">
+                                    <input type="hidden" name="attr_willpower_box13" />
+                                    <button type="action" name="act_willpower_box13"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11 ne-12 ne-13">
+                                    <input type="hidden" name="attr_willpower_box14" />
+                                    <button type="action" name="act_willpower_box14"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11 ne-12 ne-13 ne-14">
+                                    <input type="hidden" name="attr_willpower_box15" />
+                                    <button type="action" name="act_willpower_box15"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11 ne-12 ne-13 ne-14 ne-15">
+                                    <input type="hidden" name="attr_willpower_box16" />
+                                    <button type="action" name="act_willpower_box16"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11 ne-12 ne-13 ne-14 ne-15 ne-16">
+                                    <input type="hidden" name="attr_willpower_box17" />
+                                    <button type="action" name="act_willpower_box17"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11 ne-12 ne-13 ne-14 ne-15 ne-16 ne-17">
+                                    <input type="hidden" name="attr_willpower_box18" />
+                                    <button type="action" name="act_willpower_box18"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11 ne-12 ne-13 ne-14 ne-15 ne-16 ne-17 ne-18">
+                                    <input type="hidden" name="attr_willpower_box19" />
+                                    <button type="action" name="act_willpower_box19"></button>
+                                </div>
+                                <div class="checkbox ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9 ne-10 ne-11 ne-12 ne-13 ne-14 ne-15 ne-16 ne-17 ne-18 ne-19">
+                                    <input type="hidden" name="attr_willpower_box20" />
+                                    <button type="action" name="act_willpower_box20"></button>
+                                </div>
+                            </div>
                             <div class="el_spacer"></div>
                         </div>
-                        <div class="game-line mortal1 mortal2 vampire werewolf mage promethean changeling hunter geist1 mummy demon beast homebrew">
+                        <div class="game-line mortal1 mortal2 vampire werewolf mage promethean changeling hunter geist1 mummy demon beast">
                             <div class="subheader">
                                 <span class="game-line mortal1 hunter1" data-i18n="morality" >Morality</span>
                                 <span class="game-line mortal2 hunter2" data-i18n="integrity" >Integrity</span>
@@ -2195,7 +2831,6 @@
                                 <span class="game-line mummy" data-i18n="memory" >Memory</span>
                                 <span class="game-line demon" data-i18n="cover" >Cover</span>
                                 <span class="game-line beast" data-i18n="satiety" >Satiety</span>
-                                <span class="game-line homebrew" name="attr_homebrew_morality"></span>
                             </div>
                             <div class="game-line changeling2 healthboxes">
                                 <input type="hidden" name="attr_moralhealth" class="if" />
@@ -2266,6 +2901,7 @@
                             </div>
                             <div class="changeling2-inverse dots">
                                 <input type="hidden" name="attr_morality" />
+                                <button type="action" class="dot zero" name="act_morality_0">&times;</button>
                                 <button type="action" class="dot" name="act_morality_1"></button>
                                 <button type="action" class="dot ne-1" name="act_morality_2"></button>
                                 <button type="action" class="dot ne-1 ne-2" name="act_morality_3"></button>
@@ -2278,6 +2914,26 @@
                                 <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9" name="act_morality_10"></button>
                             </div>
                             <div class="el_spacer"></div>
+                        </div>
+                        <div class="game-line homebrew">
+                            <div class="subheader">
+                                <input type="hidden" class="flag" name="attr_innerlight_flag" value="0" />
+                                <button type="action" class="toggle" name="act_innerlight" data-i18n="innerlight"><span class="game-line homebrew" name="attr_homebrew_morality"></span></button>
+                            </div>
+                            <div class="dots">
+                                <input type="hidden" name="attr_innerlight" value="0"/>
+                                <button type="action" class="dot zero" name="act_innerlight_0">&times;</button>
+                                <button type="action" class="dot" name="act_innerlight_1"></button>
+                                <button type="action" class="dot ne-1" name="act_innerlight_2"></button>
+                                <button type="action" class="dot ne-1 ne-2" name="act_innerlight_3"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3" name="act_innerlight_4"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_innerlight_5"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5" name="act_innerlight_6"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6" name="act_innerlight_7"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7" name="act_innerlight_8"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8" name="act_innerlight_9"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9" name="act_innerlight_10"></button>
+                            </div>
                         </div>
                         <div class="game-line mortal2-organization vampire werewolf mage promethean changeling geist mummy demon beast homebrew">
                             <div class="subheader">
@@ -2295,12 +2951,11 @@
                                 <button type="action" class="toggle game-line mummy" name="act_potency" data-i18n="sekhem" >Sekhem</button>
                                 <button type="action" class="toggle game-line demon" name="act_potency" data-i18n="primum" >Primum</button>
                                 <button type="action" class="toggle game-line beast" name="act_potency" data-i18n="lair" >Lair</button>
-                                <button type="action" class="toggle game-line homebrew" name="act_potency">
-                                    <span name="attr_homebrew_rank"></span>
-                                </button>
+                                <button type="action" class="toggle game-line homebrew" name="act_potency" data-i18n="shadows" >Shadows</button>
                             </div>
                             <div class="dots">
-                                <input type="hidden" name="attr_potency" value="1" />
+                                <input type="hidden" name="attr_potency" value="0" />
+                                <button type="action" class="dot zero" name="act_potency_0">&times;</button>
                                 <button type="action" class="dot" name="act_potency_1"></button>
                                 <button type="action" class="dot ne-1" name="act_potency_2"></button>
                                 <button type="action" class="dot ne-1 ne-2" name="act_potency_3"></button>
@@ -2311,6 +2966,27 @@
                                 <button type="action" class="ephemeral-inverse dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7" name="act_potency_8"></button>
                                 <button type="action" class="ephemeral-inverse dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8" name="act_potency_9"></button>
                                 <button type="action" class="ephemeral-inverse dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9" name="act_potency_10"></button>
+                            </div>
+                            <div class="el_spacer"></div>
+                        </div>
+                        <div class="game-line homebrew">
+                            <div class="subheader">
+                                <input type="hidden" class="flag" name="attr_galemarks_flag" value="0" />
+                                <button type="action" class="toggle game-line homebrew" name="act_galemarks" data-i18n="galemarks" >Galemarks</button>
+                            </div>
+                            <div class="dots">
+                                <input type="hidden" name="attr_galemarks" value="0" />
+                                <button type="action" class="dot zero" name="act_galemarks_0">&times;</button>
+                                <button type="action" class="dot" name="act_galemarks_1"></button>
+                                <button type="action" class="dot ne-1" name="act_galemarks_2"></button>
+                                <button type="action" class="dot ne-1 ne-2" name="act_galemarks_3"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3" name="act_galemarks_4"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_galemarks_5"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5" name="act_galemarks_6"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6" name="act_galemarks_7"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7" name="act_galemarks_8"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8" name="act_galemarks_9"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9" name="act_galemarks_10"></button>
                             </div>
                             <div class="el_spacer"></div>
                         </div>
@@ -2466,6 +3142,27 @@
                                     <input type="hidden" name="attr_vitae_box30" />
                                     <button type="action" name="act_vitae_box30"></button>
                                 </div>
+                            </div>
+                            <div class="el_spacer"></div>
+                        </div>
+                        <div class="game-line homebrew">
+                            <div class="subheader">
+                                <input type="hidden" class="flag" name="attr_belief_flag" value="0" />
+                                <button type="action" class="toggle game-line homebrew" name="act_belief" data-i18n="belief" >Belief</button>
+                            </div>
+                            <div class="dots">
+                                <input type="hidden" name="attr_belief" value="0" />
+                                <button type="action" class="dot zero" name="act_belief_0">&times;</button>
+                                <button type="action" class="dot" name="act_belief_1"></button>
+                                <button type="action" class="dot ne-1" name="act_belief_2"></button>
+                                <button type="action" class="dot ne-1 ne-2" name="act_belief_3"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3" name="act_belief_4"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4" name="act_belief_5"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5" name="act_belief_6"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6" name="act_belief_7"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7" name="act_belief_8"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8" name="act_belief_9"></button>
+                                <button type="action" class="dot ne-1 ne-2 ne-3 ne-4 ne-5 ne-6 ne-7 ne-8 ne-9" name="act_belief_10"></button>
                             </div>
                             <div class="el_spacer"></div>
                         </div>
@@ -3055,79 +3752,7 @@
         </div>
     
     </div>
-
-    <!-- PAGE 4, CONDITIONS -->
-    <div class="page conditions">
-        <div class="hint">
-            <span data-i18n="hint">Hint:</span>
-            <span data-i18n="add-conditions">
-                Try adding conditions with the "+Add" button.
-            </span>
-            <br/>
-            <span data-i18n="add-conditions-details">
-                You will be able to specify a title, a description,
-                a resolution condition and a beat condition.
-            </span>
-        </div>
-        <div class="hint">
-            <span data-i18n="hint">Hint:</span>
-            <span data-i18n="delete-condition">
-                In order to delete a Condition:
-            </span>
-            <ol>
-                <li data-i18n="delete-condition-step1">
-                    please use "Modify" button;
-                </li>
-                <li data-i18n="delete-condition-step2">
-                    press on the red "trash" icon;
-                </li>
-                <li data-i18n="delete-condition-step3">
-                    press on the "Done" button.
-                </li>
-            </ol>
-        </div>
-        <fieldset class="repeating_conditions">
-            <div class="condition">
-                <!-- Title -->
-                <h3>
-                    <input
-                        type="text"
-                        class="title"
-                        name="attr_condition-title"
-                        placeholder="....."
-                    />
-                </h3>
-
-                <!-- Description -->
-                <textarea
-                    class="description"
-                    name="attr_condition-description"
-                    placeholder=""
-                ></textarea>
-
-                <!-- Resolution -->
-                <h4><!--
-                 --><span data-i18n="resolution">Resolution</span><!--
-                 --><span>:</span><!--
-                 --></h4>
-                <textarea
-                    name="attr_condition-resolution"
-                    placeholder=""
-                ></textarea>
-
-                <!-- Beat -->
-                <h4><!--
-                 --><span data-i18n="beat">Beat</span><!--
-                 --><span>:</span><!--
-                 --></h4>
-                <textarea
-                    name="attr_condition-beat"
-                    placeholder=""
-                ></textarea>
-            </div>
-        </fieldset>
-    </div>
-
+    
     <!-- HIDDEN FIELDS AND FORMULAS -->
     <input type="hidden" name="attr_version" value="0" />
     <input type="hidden" name="attr_0" value="0" />
@@ -3145,6 +3770,13 @@
     <input type="hidden" name="attr_dice_pool_html" value="" />
     <input type="hidden" name="attr_dice_pool" value="0" />
     <input type="hidden" name="attr_rolltype" value=")d10!cs>10}>8]]}}" />
+    <input type="hidden" name="attr_transformed_strength" value="0">
+    <input type="hidden" name="attr_transformed_dexterity" value="0">
+    <input type="hidden" name="attr_transformed_brawl" value="0">
+    <input type="hidden" name="attr_transformed_firearms" value="0">
+    <input type="hidden" name="attr_transformed_weaponry" value="0">
+    <input type="hidden" name="attr_transformed_athletics" value="0">
+    <input type="hidden" name="attr_transformed_composure" value="0">
     <!-- Translation handles for sheetworkers -->
     <span style="display: none" data-i18n="dice-pool">Dice Pool</span>
     <span style="display: none" data-i18n="modifiers">Modifiers</span>
@@ -3354,14 +3986,14 @@
     </div>
     
     <script type="text/worker">
-        var attributes = ["intelligence","wits","resolve","strength","dexterity","stamina","presence","manipulation","composure","power","finesse","resistance"];
-        var mentalSkills = ["academics","computer","crafts","enigmas","investigation","medicine","occult","politics","science"];
-        var physicalSkills = ["archery","athletics","brawl","drive","firearms","larceny","ride","stealth","survival","weaponry"];
-        var socialSkills = ["animalken","empathy","expression","intimidation","persuasion","socialize","streetwise","subterfuge"];
+        var attributes = ["intelligence","wits","resolve","strength","dexterity","stamina","presence","manipulation","composure","power","finesse","resistance","Tintelligence","Twits","Tresolve","Tstrength","Tdexterity","Tstamina","Tpresence","Tmanipulation","Tcomposure"];
+        var mentalSkills = ["academics","computer","crafts","enigmas","investigation","medicine","occult","politics","science","Tacademics","Tcomputer","Tcrafts","Tenigmas","Tinvestigation","Tmedicine","Toccult","Tpolitics","Tscience"];
+        var physicalSkills = ["archery","athletics","brawl","drive","firearms","larceny","ride","stealth","survival","weaponry","Tarchery","Tathletics","Tbrawl","Tdrive","Tfirearms","Tlarceny","Tride","Tstealth","Tsurvival","Tweaponry"];
+        var socialSkills = ["animalken","empathy","expression","intimidation","persuasion","socialize","streetwise","subterfuge","Tsubterfuge","Tanimalken","Tempathy","Texpression","Tintimidation","Tpersuasion","Tsocialize","Tstreetwise"];
         var skills = [ ...mentalSkills, ...physicalSkills, ...socialSkills ];
         var normalStats = [ ...attributes, ...skills ];
-        var powers = ["animalism","auspex","celerity","dominate","majesty","nightmare","obfuscate","protean","resilience","vigor","crúac","thebansorcery","death","fate","forces","life","matter","mind","prime","spirit","space","time"];
-        var allStats = [ ...attributes, ...skills, ...powers, "potency" ];
+        var powers = ["animalism","auspex","celerity","dominate","majesty","nightmare","obfuscate","protean","resilience","vigor","crúac","thebansorcery","death","fate","forces","life","matter","mind","prime","spirit","space","time","acqua","aria","fuoco","legno","terra","lacrima","specchio","tempesta"];
+        var allStats = [ ...attributes, ...skills, ...powers, "potency", "belief", "galemarks","morality","innerlight"];
         var potencyTranslationKeys = {
             mortal1:"", mortal2:"", "mortal2-organization":"standing",
             vampire1:"blood-potency", vampire2:"blood-potency",
@@ -3371,16 +4003,17 @@
             changeling1:"wyrd", changeling2:"wyrd",
             demon:"primum", beast:"lair", hunter:"",
             geist1:"psyche", geist2:"synergy", "geist2-geist":"rank", "geist2-organization":"esotery",
-            mummy1:"sekhem"
+            mummy1:"sekhem",
+            homebrew:"shadows"
         };
         
         allStats.forEach((attr) => {
             on(`change:${attr}`, (eventInfo) => {
                 const source = eventInfo.sourceAttribute;
-
+                //console.log(source);
                 updateDicePool();
     
-                if (["resolve", "composure"].includes(source)) {
+                if (["resolve", "composure", "tresolve", "tcomposure"].includes(source)) {
                     updateWillpower();
                 };
     
@@ -3388,22 +4021,22 @@
                     updateMoralHealth();
                 };
 
-                var speedStats = ["dexterity","strength","power","finesse"];
+                var speedStats = ["dexterity","strength","power","finesse","tdexterity","tstrength"];
                 if (speedStats.includes(source)) {
                     updateSpeed();
                 }
     
-                var defenseStats = ["wits", "dexterity", "athletics", "brawl", "weaponry", "potency", "power", "finesse"];
+                var defenseStats = ["wits", "dexterity", "athletics", "brawl", "weaponry", "potency", "power", "finesse","twits", "tdexterity", "tathletics", "tbrawl", "tweaponry"];
                 if (defenseStats.includes(source)) {
                     updateDefense();
                 };
 
-                var initiativeStats = ["dexterity", "composure", "finesse", "resistance"]
+                var initiativeStats = ["dexterity", "composure", "finesse", "resistance", "tdexterity", "tcomposure"]
                 if (initiativeStats.includes(source)) {
                     updateInitiative();
                 }
     
-                if (["stamina", "resilience", "resistance"].includes(source)) {
+                if (["stamina", "resilience", "resistance", "tstamina"].includes(source)) {
                     updateHealth();
                 };
             });
@@ -3445,6 +4078,25 @@
         on("change:base_size change:giant change:small_framed change:bonus_health", function() {
             updateHealth();
         });
+
+        on("change:transformed_flag1", function() {
+            updateHealth();
+            updateSpeed();
+            updateDefaultDefense();
+            updateInitiative();
+            updateRollType();
+            updateTransform();
+            updateWillpower();
+            const resetRollFlagAttrs = resetRollFlags();
+    
+            setAttrs({
+                ...resetRollFlagAttrs
+            }, { silent: true });
+        });
+
+        on("change:strength change:dexterity change:brawl change:firearms change:weaponry change:athletics change:Tstrength change:Tdexterity change:Tbrawl change:Tfirearms change:Tweaponry change:Tathletics change:composure change:Tcomposure", function() {
+            updateTransform();
+        });
     
         const listDotTraits = ["merit","othertrait","discipline","arcana"];
         const listDotAttrs = listDotTraits
@@ -3460,9 +4112,12 @@
             ...listDotAttrs,
             ...powers,
             "morality",
-            "potency"
+            "potency",
+            "belief",
+            "galemarks",
+            "innerlight"
         ];
-    
+
         // Set hidden attr on dot button click
         dotAttrs.forEach(attr => {
             new Array(11).fill(1).forEach((_, dot) => {
@@ -3473,7 +4128,7 @@
                 });
             });
         });
-    
+   
         // trait name and depth (number of distinct healthbox states)
         const healthTraits = { "healthbox": 4, "moralhealthbox": 3 };
         // Create array of all health attribute names, with values 1 through 24 for each health trait.
@@ -3515,7 +4170,8 @@
             "small_framed",
             "armor_flag0",
             "armor_flag1",
-            "armor_flag2"
+            "armor_flag2",
+            "transformed_flag1"
         ];
         checkboxAttributes.forEach((checkboxAttribute) => {
             on(`clicked:${checkboxAttribute}`, () => {
@@ -3550,7 +4206,7 @@
             });
         });
 
-        const pages = ["settings", "1", "2", "3", "conditions"];
+        const pages = ["settings", "1", "2", "3"];
         pages.forEach((page) => {
             on(`clicked:page_${page}`, () => {
                 setAttrs({
@@ -3603,6 +4259,7 @@
             updateDefaultDefense();
             updateInitiative();
             updateRollType();
+            updateTransform();
             const resetRollFlagAttrs = resetRollFlags();
     
             setAttrs({
@@ -3735,6 +4392,12 @@
             if (attribute === "potency") {
                 return "potency";
             }
+            if (attribute === "belief") {
+                return "belief";
+            }
+            if (attribute === "galemarks") {
+                return "galemarks";
+            }
             return "power";
         }
 
@@ -3749,6 +4412,16 @@
                 return -1;
             }
             return 0;
+        }
+
+        var getTransformedPool = function(attribute, values) {
+            // console.log(values.transformed_flag1)
+            if (values.transformed_flag1 == 1) {
+                var t = "T"
+                var tAttribute = t.concat([attribute])
+                // console.log(Number(values[attribute]) + Number(values[tAttribute]));
+                return Number(values[attribute]) + Number(values[tAttribute]);
+            }                        
         }
 
         var getGameLine = function(sheettype) {
@@ -3860,7 +4533,7 @@
         }
 
         var updateDicePoolAttributes = function(attribute) {
-            getAttrs([...allStats, "dice_pool_attributes", "sheettype", "homebrew_rank"], (v) => {
+            getAttrs([...allStats, "dice_pool_attributes", "sheettype", "homebrew_rank", "transformed_flag1"], (v) => {
                 // Update roll stats collection
                 let poolAttributes = v["dice_pool_attributes"]
                     .split(",")
@@ -3881,10 +4554,14 @@
                         .concat(poolAttributeTypes.filter((x) => x.type === "skill").reverse().slice(0, 1).reverse())
                         .concat(poolAttributeTypes.filter((x) => x.type === "power").reverse().slice(0, 1).reverse())
                         .concat(poolAttributeTypes.filter((x) => x.type === "potency").reverse().slice(0, 1).reverse())
+                        .concat(poolAttributeTypes.filter((x) => x.type === "belief").reverse().slice(0, 1).reverse())
+                        .concat(poolAttributeTypes.filter((x) => x.type === "galemarks").reverse().slice(0, 1).reverse())
+                        .concat(poolAttributeTypes.filter((x) => x.type === "innerlight").reverse().slice(0, 1).reverse())
                         .map((x) => x.poolAttribute);
                 }
 
                 // Create HTML for roll template
+                // console.log(poolAttributes);
                 const dicePoolHtml = getSheetDicePoolHtml(poolAttributes, v);
 
                 // Create dice pool for roll
@@ -3943,31 +4620,66 @@
             switch (getAttributeType(attribute)) {
                 case "potency":
                     return getTranslationByKey(potencyTranslationKeys[sheettype]) || homebrewRank;
+                case "belief":
+                    return "Belief"
+                case "galemarks":
+                    return "Galemarks"
                 default:
                     return getTranslationByKey(attribute);
             }
         }
 
         var getAttributePool = function(attribute, values) {
-            return Number(values[attribute]) || getUnskilledPenalty(attribute);
+            // console.log(getTransformedPool(attribute, values));
+            return Number(getTransformedPool(attribute, values)) || Number(values[attribute]) || getUnskilledPenalty(attribute);
         }
 
         var getSheetDicePool = function(poolAttributes, values) {
             const sum = poolAttributes
                 .map((poolAttribute) => getAttributePool(poolAttribute, values))
                 .reduce((sum, value) => sum + value, 0)
-            
-            return Math.max(sum, 1);
+            // console.log(Math.max(sum, 0))
+            return Math.max(sum, 0);
+        }
+
+        var updateTransform = function() {
+            getAttrs(["strength","dexterity","brawl","firearms","weaponry","athletics","transformed_flag1","composure","Tstrength","Tdexterity","Tbrawl","Tfirearms","Tweaponry","Tathletics","Tcomposure"], function(v) {
+                if (v.transformed_flag1 == 0) {
+                    setAttrs({
+                        "transformed_strength": v.strength,
+                        "transformed_dexterity": v.dexterity,
+                        "transformed_brawl": v.brawl,
+                        "transformed_firearms": v.firearms,
+                        "transformed_weaponry": v.weaponry,
+                        "transformed_athletics": v.athletics,
+                        "transformed_composure": v.composure
+                    });
+                }
+                else {
+                    setAttrs({
+                        "transformed_strength": v.strength + v.Tstrength,
+                        "transformed_dexterity": v.dexterity + v.Tdexterity,
+                        "transformed_brawl": v.brawl + v.Tbrawl,
+                        "transformed_firearms": v.firearms + v.Tfirearms,
+                        "transformed_weaponry": v.weaponry + v.Tweaponry,
+                        "transformed_athletics": v.athletics + v.Tathletics,
+                        "transformed_composure": v.composure + v.Tcomposure 
+                    });
+                };
+            });
         }
     
         var updateHealth = function() {
-            getAttrs(["stamina","resistance","base_size","giant","small_framed","sheettype","entity","resilience","bonus_health"], function(v) {
+            getAttrs(["stamina","resistance","base_size","giant","small_framed","sheettype","entity","resilience","bonus_health","transformed_flag1","Tstamina"], function(v) {
                 var health = 1;
                 switch (v.entity) {
                     case "corporeal":
                         health = Number(v.stamina) + Number(v.base_size) + Number(v.giant) + Number(v.small_framed) + Number(v.bonus_health);
                         if(v.sheettype.indexOf("vampire2")) {
                             health = health + Number(v.resilience);
+                        }
+                        if(v.transformed_flag1 == 1) {
+                            health = Number(v.stamina) + Number(v.Tstamina) + Number(v.base_size) + Number(v.giant) + Number(v.small_framed) + Number(v.bonus_health);
                         }
                         break;
                     case "ephemeral":
@@ -3984,8 +4696,15 @@
         }
     
         var updateWillpower = function() {
-            getAttrs(["resolve","composure","bonus_willpower"], function(v) {
-                var willpower = parseInt(v.resolve, 10) + parseInt(v.composure, 10) + parseInt(v.bonus_willpower, 10);
+            getAttrs(["resolve","composure","bonus_willpower","transformed_flag1","Tresolve","Tcomposure"], function(v) {
+                // var willpower = parseInt(v.resolve, 10) + parseInt(v.composure, 10) + parseInt(v.bonus_willpower, 10);
+                var resolve = parseInt(v.resolve, 10);
+                var composure = parseInt(v.composure, 10);
+                var Tcomposure = parseInt(v.Tcomposure);
+                var Tresolve = parseInt(v.Tresolve);
+                var willpower = parseInt(v.bonus_willpower, 10);
+                if(v.transformed_flag1 == 0) {willpower = willpower + resolve + composure};
+                if(v.transformed_flag1 == 1) {willpower = willpower + resolve + composure + Tresolve + Tcomposure};
                 setAttrs({
                     willpower: willpower
                 });
@@ -4004,8 +4723,10 @@
         }
     
         var updateAttacks = function() {
-            getAttrs(["strength","attack","iron_stamina","attack_initiative0","attack_initiative1","attack_initiative2","attack_initiative3","attack_initiative4","attack_strength0","attack_strength1","attack_strength2","attack_strength3","attack_strength4","armor_flag0","armor_flag1","armor_flag2","armor_strength0","armor_strength1","armor_strength2","health","healthbox_1","healthbox_2","healthbox_3","healthbox_4","healthbox_5","healthbox_6","healthbox_7","healthbox_8","healthbox_9","healthbox_10","healthbox_11","healthbox_12","healthbox_13","healthbox_14","healthbox_15","healthbox_16"], function(v) {
+            getAttrs(["strength","attack","iron_stamina","attack_initiative0","attack_initiative1","attack_initiative2","attack_initiative3","attack_initiative4","attack_strength0","attack_strength1","attack_strength2","attack_strength3","attack_strength4","armor_flag0","armor_flag1","armor_flag2","armor_strength0","armor_strength1","armor_strength2","health","healthbox_1","healthbox_2","healthbox_3","healthbox_4","healthbox_5","healthbox_6","healthbox_7","healthbox_8","healthbox_9","healthbox_10","healthbox_11","healthbox_12","healthbox_13","healthbox_14","healthbox_15","healthbox_16","transformed_flag1","Tstrength"], function(v) {
                 var str = parseInt(v.strength, 10);
+                var Tstr = parseInt(v.Tstrength, 10);
+                if(v.transformed_flag1 == 1) {str = str + Tstr};
                 var regex = /attack_type(.)/;
                 var atknum = v.attack.match(regex)[1];
                 var init = isNaN(v["attack_initiative" + atknum]) === false && v["attack_initiative" + atknum] != "" ? v["attack_initiative" + atknum] : 0;
@@ -4035,14 +4756,17 @@
         }
 
         var updateSpeed = function() {
-            getAttrs(["entity","strength","dexterity","power","finesse"], function(v) {
+            getAttrs(["entity","strength","dexterity","power","finesse","transformed_flag1","Tstrength","Tdexterity"], function(v) {
                 var speed;
                 switch(v.entity) {
                     case "corporeal":
                     default:
                         var strength = parseInt(v.strength) || 1;
                         var dexterity = parseInt(v.dexterity) || 1;
+                        var Tstrength = parseInt(v.Tstrength) || 1;
+                        var Tdexterity = parseInt(v.Tdexterity) || 1;
                         speed = strength + dexterity;
+                        if(v.transformed_flag1 == 1) {speed = strength + dexterity + Tstrength + Tdexterity};
                         break;
                     case "ephemeral":
                         var power = parseInt(v.power) || 1;
@@ -4056,7 +4780,7 @@
         }
     
         var updateDefense = function() {
-            getAttrs(["defense_select","entity","athletics","brawl","dexterity","weaponry","wits","potency","power","finesse"], function(v) {
+            getAttrs(["defense_select","entity","athletics","brawl","dexterity","weaponry","wits","potency","power","finesse","transformed_flag1","Tathletics","Tbrawl","Tdexterity","Tweaponry","Twits"], function(v) {
                 var defense;
                 switch(v.entity) {
                     case "corporeal":
@@ -4074,6 +4798,10 @@
         var getCorporealDefense = function(v) {
             var dexterity = parseInt(v.dexterity, 10) || 0;
             var wits = parseInt(v.wits, 10) || 10;
+            var Tdexterity = parseInt(v.Tdexterity, 10) || 0;
+            var Twits = parseInt(v.Twits, 10) || 10;
+            if(v.transformed_flag1 == 1) {dexterity = dexterity + Tdexterity};
+            if(v.transformed_flag1 == 1) {wits = wits + Twits};
             
             switch (v.defense_select) {
                 case "lowest":
@@ -4086,12 +4814,15 @@
                     return dexterity;
                 case "lowest_plus_athletics":
                     var athletics = parseInt(v.athletics, 10) || 0;
+                    if(v.transformed_flag1 == 1) {athletics = athletics + parseInt(v.Tathletics, 10) || 0};
                     return Math.min(dexterity, wits) + athletics;
                 case "lowest_plus_brawl":
                     var brawl = parseInt(v.brawl, 10) || 10; // PRD-1407
+                    if(v.transformed_flag1 == 1) {brawl = brawl + parseInt(v.Tbrawl, 10) || 10};
                     return Math.min(dexterity, wits) + brawl;
                 case "lowest_plus_weaponry":
                     var weaponry = parseInt(v.weaponry, 10) || 10; // PRD-1407
+                    if(v.transformed_flag1 == 1) {weaponry = weaponry + parseInt(v.Tweaponry, 10) || 10};
                     return Math.min(dexterity, wits) + weaponry;
             }
         }
@@ -4126,14 +4857,17 @@
         }
 
         var updateInitiative = function() {
-            getAttrs(["entity", "dexterity", "composure", "finesse", "resistance"], function(v) {
+            getAttrs(["entity", "dexterity", "composure", "finesse", "resistance", "transformed_flag1","Tdexterity","Tcomposure"], function(v) {
                 var initiative;
                 switch(v.entity) {
                     case "corporeal":
                     default:
                         var dexterity = parseInt(v.dexterity) || 1;
                         var composure = parseInt(v.composure) || 1;
+                        var Tdexterity = parseInt(v.Tdexterity) || 0;
+                        var Tcomposure = parseInt(v.Tcomposure) || 0;
                         initiative = dexterity + composure;
+                        if(v.transformed_flag1 == 1) {initiative = dexterity + composure + Tdexterity + Tcomposure};
                         break;
                     case "ephemeral":
                         var finesse = parseInt(v.finesse) || 1;
@@ -4202,47 +4936,47 @@
                     if(isSecondEdition) {
                         switch(v[`attack_type${i}`]) {
                             // Melee
-                            case "{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage${i}}+@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage${i}}+@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                             // Gun
-                            case "{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage${i}}+@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage${i}}+@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                             // Thrown
-                            case "{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                             // Brawl* (Fighting Finesse)
-                            case "{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                             // Melee* (Fighting Finesse)
-                            case "{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                         }
                     } else {
                         switch(v[`attack_type${i}`]) {
                             // Melee
-                            case "{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage${i}}+@{strength}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{2nd=1}} {{str=1}} {{wea=1}} {{result=[[{((@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{1st=1}} {{str=1}} {{wea=1}} {{result=[[{((@{attack_damage${i}}+@{transformed_strength}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                             // Gun
-                            case "{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage${i}}+@{dexterity}+@{firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{2nd=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{1st=1}} {{dex=1}} {{fir=1}} {{result=[[{((@{attack_damage${i}}+@{transformed_dexterity}+@{transformed_firearms}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                             // Thrown
-                            case "{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{2nd=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{1st=1}} {{dex=1}} {{ath=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_athletics}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                             // Brawl* (Fighting Finesse)
-                            case "{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{2nd=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{1st=1}} {{dex=1}} {{bra=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_brawl}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                             // Melee* (Fighting Finesse)
-                            case "{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
-                                update[`attack_type${i}`] = "{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage1}+@{dexterity}+@{weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
+                            case "{{2nd=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})":
+                                update[`attack_type${i}`] = "{{1st=1}} {{dex=1}} {{wea=1}} {{result=[[{((@{attack_damage1}+@{transformed_dexterity}+@{transformed_weaponry}+?{@{modifiermacro}|0}+@{wound_penalty}+@{weapon_penalty}+@{armor_penalty})";
                                 break;
                         }
                     }
@@ -4267,4 +5001,3 @@
             };
         }
     </script>
-    

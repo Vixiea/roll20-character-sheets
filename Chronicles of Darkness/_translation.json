@@ -1,4 +1,4 @@
-{
+﻿{
   "settings":"Settings",
   "page-1":"Page 1",
   "page-2":"Page 2",
@@ -358,6 +358,19 @@
   "esotery":"Esotery",
   "homebrew":"Homebrew",
   "abilities":"Abilities",
-  "resource":"Resource"
+  "resource":"Resource",
+  "belief":"Belief",
+  "acqua":"Acqua",
+  "aria":"Aria",
+  "fuoco":"Fuoco",
+  "legno":"Legno",
+  "terra":"Terra",
+  "lacrima":"Lacrima",
+  "specchio":"Specchio",
+  "tempesta":"Tempesta",
+  "invocations":"Invocations",
+  "shadows":"Shadows",
+  "potency":"Potency",
+  "galemarks":"Galemarks",
+  "innerlight":"Inner Light"
  }
- 
